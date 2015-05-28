@@ -623,7 +623,9 @@ public final class MockWebServer {
     } else if (!request.startsWith("POST ")
         && !request.startsWith("PUT ")
         && !request.startsWith("PATCH ")
-        && !request.startsWith("DELETE ")) { // Permitted as spec is ambiguous.
+        && !request.startsWith("PUT ")
+        && !request.startsWith("SUBSCRIBE ")
+        && !request.startsWith("UNSUBSCRIBE ")) { // Permitted as spec is ambiguous.
       throw new UnsupportedOperationException("Unexpected method: " + request);
     }
 
